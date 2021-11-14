@@ -1,0 +1,112 @@
+.myApp{
+  margin: 4rem auto;
+  display: flex;
+  justify-content: space-around;
+  transition: all 1s;
+}
+
+img {
+  margin-left: 50px;
+  height: 50px;
+}
+.form_input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  text-align: center;
+  color: #333;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+.form-control {
+  border-radius: 7.25rem;
+}
+.form__btn {
+  margin-left: 8px;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.2rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+input:nth-child(2) {
+  margin-left: 20px;
+}
+.main-page {
+  margin-top: 100px;
+}
+.operation-transfer {
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+.operations {
+  float: right;
+}
+
+.operation {
+  width: 450px;
+  height: 150px;
+  border-radius: 1rem;
+  padding: 15px 30px;
+  color: #333;
+}
+.operation_title {
+  margin-bottom: 0;
+}
+.operation-loan {
+  margin-top: 30px;
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+.operation-close {
+  margin-top: 30px;
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+label {
+  display: block;
+  float: left;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.myMovements{
+  width: 800px;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+}
+.myMovements-row{
+  padding: 2.25rem 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.movements-type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+.movements-date{
+  font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #666;
+}
+.movements-value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+.mylabelGreen {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+.mylabelRed {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}

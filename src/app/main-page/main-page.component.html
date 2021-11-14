@@ -1,0 +1,100 @@
+<div class="d-flex justify-content-between mt-4">
+  <h2>Main Page</h2>
+  <img src="https://bankist.netlify.app/logo.png" />
+  <div class="mb-3 d-flex justify-content-around">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="user"
+      [(ngModel)]="user"
+    />
+    <input
+      type="number"
+      class="form-control"
+      placeholder="PIN"
+      [(ngModel)]="pin"
+    />
+    <a class="btn form__btn" (click)="enter()">→</a>
+  </div>
+</div>
+
+<div style="margin-top: 5%;" *ngIf="isShowDiv">
+  <div class="d-flex justify-content-around balance">
+    <div>
+      <span class="fs-4">Current Balance</span>
+      <br />
+      <span class="fst-italic"
+        >As of {{ myDate | date: "dd/MM/yyyy, h:mm" }}</span
+      >
+    </div>
+    <span class="fs-1">{{ balance | currency: "EUR" }}</span>
+  </div>
+
+  <div class="myApp">
+    <div class="myMovements" #addElem>
+      <div class="myMovements-row" *ngFor="let action of actions">
+        <div class="movements-type {{action.className}}">{{action.description}}</div>
+        <div class="movements-date">{{action.date | date: 'dd/MM/yyyy'}}</div>
+        <div class="movements-value">{{action.sign}}{{action.money}}&nbsp;€</div>
+      </div>
+    </div>
+
+    <div class="operations">
+      <div class="operation operation-transfer">
+        <p class="title">Transfer money</p>
+        <div class="mb-3 d-flex justify-content-around">
+          <input
+            type="text"
+            class="form-control form_input"
+            [(ngModel)]="transferTo"
+          />
+          <input
+            type="number"
+            class="form-control form_input"
+            [(ngModel)]="amount"
+          />
+          <button class="form__btn" (click)="transfer()">→</button>
+        </div>
+        <div class="d-flex justify-content-around">
+          <label for="">Transfer to</label>
+          <label for="">Amount</label>
+        </div>
+      </div>
+      <div class="operation operation-loan">
+        <p class="title">Request loan</p>
+        <div class="mb-3 d-flex justify-content-around">
+          <input
+            type="number"
+            class="form-control form_input"
+            [(ngModel)]="loan"
+          />
+          <button class="form__btn" (click)="requestLoan()">→</button>
+        </div>
+        <div class="mr-10 d-flex justify-content-around">
+          <label for="">Amount</label>
+        </div>
+      </div>
+
+      <div class="operation operation-close">
+        <p class="">Close account</p>
+        <div class="mb-3 d-flex justify-content-around">
+          <input
+            type="text"
+            class="form-control form_input"
+            [(ngModel)]="userClose"
+          />
+          <input
+            type="number"
+            class="form-control form_input"
+            [(ngModel)]="pinConfirmToClose"
+          />
+          <button class="form__btn" (click)="closeAcc()">→</button>
+        </div>
+        <div class="mr-10 d-flex justify-content-around">
+          <label for="">Confirm User</label>
+          <label for="">Confirm PIN</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
